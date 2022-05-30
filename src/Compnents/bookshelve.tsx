@@ -20,9 +20,8 @@ const Bookshelve = (props: any) => {
     props.booklist.slice(0, 5)
     const [value, setValue] = useState(0);
     function rightEncounterRendering() {
-        setValue(value + 5)
-        console.log(value);
-        setSelf(props.booklist.slice(value, value + 5));
+        setValue(value + 5); setSelf(props.booklist.slice(value, value + 5));
+
     }
 
     function leftEncounterRendering() {
@@ -37,7 +36,7 @@ const Bookshelve = (props: any) => {
 
     return (
         <div className='container'>
-
+            <h1>{props.cat}</h1>
             {
                 props.booklist.length == 1 ?
                     props.booklist.map((book: any) => {

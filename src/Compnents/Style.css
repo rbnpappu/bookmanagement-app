@@ -9,7 +9,8 @@
 	display: flex;
 	width: 100%;
 	top: 150px;
-	margin: 10px;
+	margin: 20px;
+
 
 
 }
@@ -59,37 +60,40 @@
 	position: relative;
 	width: 100px;
 	height: 55px;
-	left: 150px;
+	left: 20px;
 	top: 50px;
 	margin: 50px;
+	padding-top: 20px;
 
 
 }
 
 .left {
-	position: relative;
-	top: 150px;
-	right: 970px;
+	position: absolute;
+	top: 250px;
+	right: 1250px;
 	width: 80px;
 	height: 20px;
 
 }
 
 .right {
-	position: relative;
-	top: 150px;
-	left: 250px;
+	position: absolute;
+	top: 250px;
+	left: 1250px;
 	width: 80px;
 	height: 20px;
+
 
 }
 
 .button-right {
 	position: relative;
 	top: 150px;
-	left: 250px;
-	width: 80px;
+	left: 80px;
 	height: 20px;
+	display: flex;
+	justify-content: flex-start;
 
 
 }
@@ -98,9 +102,9 @@
 	position: relative;
 	top: 150px;
 	right: 1055px;
-	width: 80px;
+
 	height: 20px;
-	padding: 20px;
+
 	display: flex;
 	justify-content: flex-start;
 
@@ -135,4 +139,8 @@
 	margin: 100px;
 	left: 350px;
 
+}
+
+.header {
+	right: 100px;
 }

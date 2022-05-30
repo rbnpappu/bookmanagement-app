@@ -9,7 +9,7 @@ import "./Style.css";
 const Searchitems = (props: any) => {
 
     const [searchitems, setitems] = useState("");
-    const [book, setitem] = useState<bookstyle[]>([]);
+
     function handleSubmit(e: any) {
         e.preventDefault();
 
