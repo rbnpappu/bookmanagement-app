@@ -19,8 +19,7 @@ const Display = (props: any) => {
     const [bookself, setSelf] = useState<bookstyle[]>(props.booklist.slice(0, 5));
     const [value, setValue] = useState(5);
     function rightEncounterRendering() {
-        setValue(value + 5)
-        console.log(value);
+        setValue(value + 5);
         setSelf(props.booklist.slice(value, value + 5));
     }
 
@@ -38,6 +37,7 @@ const Display = (props: any) => {
 
     return (
         <div className='sub-container'>
+            <h1 className='header'>{props.cat}</h1>
 
             {
 
