@@ -75,19 +75,18 @@
 
 .button-right {
 	position: flex;
-	margin: 1%;
+	margin: 5%;
 	height: 50px;
 	width: 50px;
-	padding: 1%;
+
 
 }
 
 .button-left {
 	position: flex;
-	margin: 2%;
+	margin: 0.5%;
 	height: 50px;
 	width: 50px;
-	padding: 1%;
 
 
 
@@ -101,12 +100,6 @@
 
 }
 
-.box {
-	display: flex;
-	position: relative;
-	top: 300px;
-	width: 100%;
-}
 
 
 
