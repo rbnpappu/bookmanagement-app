@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useState } from 'react';
-import Bookshelve, { bookstyle } from './bookshelve';
+import Bookshelve, { bookstyle } from './DisplayBookshelve';
 import "./Style.css";
 
 
@@ -25,7 +25,7 @@ const Searchitems = (props: any) => {
     return (
         <div className='container'>
 
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form onSubmit={(e) => handleSubmit(e)} className="form">
                 <input type="text"
                     placeholder="Search books"
                     value={searchitems}

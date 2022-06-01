@@ -8,7 +8,7 @@
 .container {
 	display: flex;
 	width: 100%;
-	top: 150px;
+	top: 350px;
 	margin: 20px;
 
 
@@ -21,92 +21,75 @@
 }
 
 .searchtypebox {
-	position: relative;
+	position: flex;
 	top: 10px;
 	left: 850px;
 	height: 30px;
 	width: 350px;
+	padding: 0.5%;
 }
 
 .submit {
-	position: relative;
-	top: 50px;
-	left: 840px;
-	height: 30px;
-	width: 55px;
-	margin: 20px;
+	position: flex;
+	padding: 0.5%;
 }
 
-.box {
-	display: flex;
-	position: fixed;
-
-	top: 150px;
-	right: 600px;
-
-
+.form {
+	position: relative;
+	left: 920px
 }
 
 .image {
-	width: 180px;
-	height: 100px;
-	margin: 5px;
-	padding: 10px;
-	display: flex;
-	justify-content: flex-start;
+	position: relative;
+	width: 150px;
+	height: 160px;
+
 }
 
 .book {
-	position: relative;
+
 	width: 100px;
-	height: 55px;
-	left: 20px;
+	height: 255px;
+	left: 50px;
 	top: 50px;
-	margin: 50px;
-	padding-top: 20px;
+	margin: 1.9%;
+	padding: 20px;
 
 
 }
 
 .left {
-	position: absolute;
-	top: 250px;
-	right: 1250px;
-	width: 80px;
-	height: 20px;
+	position: flex;
+	margin-left: 2%;
+
 
 }
 
 .right {
-	position: absolute;
-	top: 250px;
-	left: 1250px;
-	width: 80px;
-	height: 20px;
+	position: flex;
+	margin: 9%;
+	padding: 0.5%;
 
 
 }
 
 .button-right {
-	position: relative;
-	top: 150px;
-	left: 80px;
-	height: 20px;
-	display: flex;
-	justify-content: flex-start;
-
+	position: flex;
+	margin: 1%;
+	height: 50px;
+	width: 50px;
+	padding: 1%;
 
 }
 
 .button-left {
-	position: relative;
-	top: 150px;
-	right: 1055px;
+	position: flex;
+	margin: 2%;
+	height: 50px;
+	width: 50px;
+	padding: 1%;
 
-	height: 20px;
 
-	display: flex;
-	justify-content: flex-start;
 
 }
 
@@ -125,19 +108,15 @@
 	width: 100%;
 }
 
-.button {
-	position: relative;
-	top: 50px;
-	left: 790px;
 
-}
 
 .sub-container {
 	display: flex;
 	top: 150px;
-	padding-left: 10px;
+	padding-left: 5px;
 	margin: 100px;
 	left: 350px;
+
 
 }
 

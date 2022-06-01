@@ -4,10 +4,10 @@ import React, { ReactNode } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ReactDOM, { render } from 'react-dom';
-import Bookshelve from './bookshelve';
-import Categroy from './category';
+
+
 import Searchitems from './searchitems';
-import Display from './disolay';
+import Display from './DisplayBookshelve';
 
 interface bookstyle {
 	id: string,
@@ -21,7 +21,6 @@ interface bookstyle {
 const Parent = (props: any) => {
 	const [booklist, setData] = useState<bookstyle[]>([]);
 
-	const fields = [];
 
 
 	const [searchbook, setSearchData] = useState<bookstyle[]>([]);
@@ -35,7 +34,7 @@ const Parent = (props: any) => {
 
 	let category = [...Array.from(new Set(booklist.map(item => item.category)))];
 	let categorydata = category.map((str) => ({ value: str }));
-	const fields1: JSX.Element[] = [];
+
 	const searchdata = (data: any) => {
 		setSearchData(data);
 
@@ -47,9 +46,9 @@ const Parent = (props: any) => {
 			{
 				searchbook.length === 0 ?
 
-					<Bookshelve booklist={booklist} style={{ top: "30px" }} cat={"All Books"} />
+					<Display booklist={booklist} cat={"All books"} />
 					:
-					<Bookshelve booklist={searchbook} cat={"Result"} />
+					<Display booklist={searchbook} cat={"Result"} />
 			}
 
 			{

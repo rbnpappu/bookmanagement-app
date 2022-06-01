@@ -14,29 +14,51 @@ export interface bookstyle {
 
 
 
-const Bookshelve = (props: any) => {
+const Display = (props: any) => {
+    const [init, setinit] = useState(0);
+    const [value, setvalue] = useState(5);
 
-    const [bookself, setSelf] = useState<bookstyle[]>([]);
-    props.booklist.slice(0, 5)
-    const [value, setValue] = useState(0);
-    function rightEncounterRendering() {
-        setValue(value + 5); setSelf(props.booklist.slice(value, value + 5));
 
-    }
+    const [bookself, setSelf] = useState<bookstyle[]>(props.booklist.slice(init, value));
+
+
+
 
     function leftEncounterRendering() {
-        if (value === 5) {
+
+        if (init == 0) {
+            setvalue(value);
+            setinit(init);
             return;
         }
-        setValue(value - 5)
-        setSelf(props.booklist.slice(value, value + 5));
-    }
 
+        setinit(init - 1);
+        setvalue(value - 1);
+        console.log(init, value);
+        setSelf(props.booklist.slice(init, value));
+
+    }
+    function rightEncounterRendering() {
+        if (init == props.booklist.length && value > props.booklist.length) {
+            setinit(init - 2);
+            setvalue(value - 2);
+            return;
+        }
+
+        setinit(init + 1);
+        setvalue(value + 1);
+        console.log(init, value);
+        setSelf(props.booklist.slice(init, value));
+
+    }
 
 
     return (
-        <div className='container'>
-            <h1>{props.cat}</h1>
+        <div className='sub-container' >
+            <h1 className='header'>{props.cat}</h1>
+
+
+            <button type='submit' className='button-left' placeholder="submit" onClick={leftEncounterRendering}>Left</button>
             {
                 props.booklist.length == 1 ?
                     props.booklist.map((book: any) => {
@@ -65,13 +87,12 @@ const Bookshelve = (props: any) => {
                     )
 
             }
+            <button type='submit' className='button-right' placeholder="submit" onClick={rightEncounterRendering}>Right</button>
 
-            <button type='submit' className='right' placeholder="submit" onClick={rightEncounterRendering}>Right</button>
-            <button type='submit' className='left' placeholder="submit" onClick={leftEncounterRendering}>Left</button>
-
+            <br />
 
         </div>
     );
 
 }
-export default Bookshelve;
+export default Display;
