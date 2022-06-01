@@ -1,9 +1,6 @@
 import React from 'react';
-
 import { useState } from 'react';
-import Bookshelve, { bookstyle } from './DisplayBookshelve';
 import "./Style.css";
-
 
 
 const Searchitems = (props: any) => {
@@ -15,11 +12,6 @@ const Searchitems = (props: any) => {
 
         const filterdata = props.booklist.filter((user: { title: string; }) => user.title === searchitems);
         props.searchdata(filterdata);
-
-        // else {
-        //     props.searchdata(props.booklist);
-        // }
-
     }
 
     return (

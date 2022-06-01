@@ -12,17 +12,10 @@ export interface bookstyle {
     }
 }
 
-
-
 const Display = (props: any) => {
     const [init, setinit] = useState(0);
     const [value, setvalue] = useState(5);
-
-
     const [bookself, setSelf] = useState<bookstyle[]>(props.booklist.slice(init, value));
-
-
-
 
     function leftEncounterRendering() {
 
