@@ -85,19 +85,3 @@ it('Should be able to type input element', async () => {
 
 }
 )
-
-
-
-
-
-
-
-
-
-
-
-
-// test('renders learn react link', () => {
-//   const { container, getByText } = render(<Parent />);
-//   expect(getByText('filterdata')).toBeInTheDocument()
-// });
