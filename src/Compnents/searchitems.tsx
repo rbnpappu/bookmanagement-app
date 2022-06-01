@@ -18,12 +18,16 @@ const Searchitems = (props: any) => {
         <div className='container'>
 
             <form onSubmit={(e) => handleSubmit(e)} className="form">
+
+
                 <input type="text"
                     placeholder="Search books"
                     value={searchitems}
                     className='searchtypebox'
                     onChange={(e) => setitems(e.target.value)}
                 />
+
+
                 <input type={"submit"} className="button" />
 
             </form>
