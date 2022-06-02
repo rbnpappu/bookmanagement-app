@@ -1,58 +1,54 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
-import Searchitems from './searchitems';
+import { bookproperties } from './BooksContainer';
 import "./Style.css";
-export interface bookstyle {
-  id: string,
-  title: string,
-  category: string,
-  cover: {
-    img: string
-  }
+
+export interface Props {
+
+  books: bookproperties[],
+  categrory: string
 }
 
-const Display = (props: any) => {
-  const [init, setinit] = useState(0);
-  const [value, setvalue] = useState(5);
-  const [bookself, setSelf] = useState<bookstyle[]>(props.booklist.slice(init, value));
+const Display = (props: Props) => {
+  const [inital, setinit] = useState(0);
+  const [final, setfinal] = useState(5);
+  const [bookself, setSelf] = useState<bookproperties[]>(props.books.slice(inital, final));
 
   function leftEncounterRendering() {
 
-    if (init == 0) {
-      setvalue(value);
-      setinit(init);
+    if (inital == 0) {
+      setfinal(final);
+      setinit(inital);
       return;
     }
 
-    setinit(init - 1);
-    setvalue(value - 1);
-    console.log(init, value);
-    setSelf(props.booklist.slice(init, value));
+    setinit(inital - 1);
+    setfinal(final - 1);
+    console.log(inital, final);
+    setSelf(props.books.slice(inital, final));
 
   }
   function rightEncounterRendering() {
-    if (init == props.booklist.length && value > props.booklist.length) {
-      setinit(init - 2);
-      setvalue(value - 2);
+    if (inital == props.books.length && final > props.books.length) {
+      setinit(inital - 2);
+      setfinal(final - 2);
       return;
     }
 
-    setinit(init + 1);
-    setvalue(value + 1);
-    console.log(init, value);
-    setSelf(props.booklist.slice(init, value));
+    setinit(inital + 1);
+    setfinal(final + 1);
+    setSelf(props.books.slice(inital, final));
 
   }
 
 
   return (
     <div className='sub-container' >
-      <h1 className='header'>{props.cat}</h1>
+      <h1 className='header'>{props.categrory}</h1>
       <button type='submit' className='button-left' placeholder="submit" onClick={leftEncounterRendering}>Left</button>
       {
-        props.booklist.length == 1 ?
-          props.booklist.map((book: any) => {
+        props.books.length == 1 ?
+          props.books.map((book: bookproperties) => {
 
             return (
               <div className="book" key={book.id}>
