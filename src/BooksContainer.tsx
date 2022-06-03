@@ -4,17 +4,16 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 
-
-import Searchitems from './searchbook';
-import Display from './DisplayBookshelve';
-
+import Display from './Compnents/BookShelve';
+import SearchBook from './Compnents/SearchBook';
 export interface bookproperties {
   id: string,
   title: string,
   category: string,
   cover: {
     image: string
-  }
+  },
+  subtitle: string
 }
 
 const BooksContainer = () => {
@@ -25,18 +24,11 @@ const BooksContainer = () => {
   const [searchbook, setsearchbook] = useState<bookproperties[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/data.json')
+    fetch('http://localhost:3002/data.json')
       .then(response => response.json())
       .then(response => setbooks(response));
 
   }, []);
-
-  interface props {
-    value: string;
-  }
-  interface Props {
-    categroies: props[]
-  }
 
   let setofcategoriesofbook = [...Array.from(new Set(books.map(book => book.category)))];
   let categories = setofcategoriesofbook.map((str) => ({ value: str }));
@@ -48,7 +40,7 @@ const BooksContainer = () => {
   }
   return (
     <div>
-      <Searchitems books={books} searchbookresult={searchbookresult} />
+      <SearchBook books={books} searchbookresult={searchbookresult} />
       {
         searchbook.length === 0 ?
 

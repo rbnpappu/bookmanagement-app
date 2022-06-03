@@ -1,0 +1,18 @@
+.searchtypebox {
+  position: flex;
+  top: 10px;
+  left: 850px;
+  height: 30px;
+  width: 350px;
+  padding: 0.5%;
+}
+
+.submit {
+  position: flex;
+  padding: 0.5%;
+}
+
+.form {
+  position: relative;
+  left: 920px
+}

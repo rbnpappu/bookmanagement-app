@@ -1,48 +1,50 @@
 import React from 'react';
 import { useState } from 'react';
-import { bookproperties } from './BooksContainer';
-import "./Style.css";
+import { bookproperties } from '../BooksContainer';
+import './SearchBookStyle.css'
+
 
 interface Props {
-    books: bookproperties[],
-    searchbookresult: any
+  books: bookproperties[],
+  searchbookresult: any
 }
 
-const Searchbook = (props: Props) => {
+const SearchBook = (props: Props) => {
 
-    const [searchbookquery, setbook] = useState("");
+  const [searchbookquery, setbook] = useState("");
 
-    function handleSubmit(e: any) {
-        e.preventDefault();
+  function handleSubmit(e: any) {
+    e.preventDefault();
 
-        const filterdata = props.books.filter((book: { title: string; }) => book.title === searchbookquery);
+    const filterdata = props.books.filter((book: { title: string; }) => book.title === searchbookquery);
 
-        props.searchbookresult(filterdata);
-    }
-    console.log(searchbookquery);
-    return (
-        <div className='container'>
-
-            <form onSubmit={(e) => handleSubmit(e)} className="form">
+    props.searchbookresult(filterdata);
+  }
 
 
-                <input type="text"
-                    placeholder="Search books"
-                    value={searchbookquery}
-                    className='searchtypebox'
-                    onChange={(e) => setbook(e.target.value)}
-                />
+  return (
+    <div className='container'>
+
+      <form onSubmit={(e) => handleSubmit(e)} className="form">
 
 
-                <input type={"submit"} className="button" />
+        <input type="text"
+          placeholder="Search books"
+          value={searchbookquery}
+          className='searchtypebox'
+          onChange={(e) => setbook(e.target.value)}
+        />
 
-            </form>
 
-        </div >
+        <input type={"submit"} className="button" />
+
+      </form>
+
+    </div >
 
 
-    );
+  );
 
 }
 
-export default Searchbook;
+export default SearchBook;

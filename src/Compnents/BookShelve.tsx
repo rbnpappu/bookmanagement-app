@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { bookproperties } from './BooksContainer';
+import { bookproperties } from '../BooksContainer';
 import "./Style.css";
 
 export interface Props {
@@ -43,7 +43,7 @@ const Display = (props: Props) => {
 
 
   return (
-    <div className='sub-container' >
+    <div className='book_container' >
       <h1 className='header'>{props.categrory}</h1>
       <button type='submit' className='button-left' placeholder="submit" onClick={leftEncounterRendering}>Left</button>
       {

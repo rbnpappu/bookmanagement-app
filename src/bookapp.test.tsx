@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen, getByText, fireEvent } from '@testing-library/react';
+import SearchBook from './Compnents/SearchBook';
+import Display from './Compnents/BookShelve';
+import { bookproperties } from './BooksContainer';
 
-import Searchbook from './Compnents/searchbook';
-import Display from './Compnents/DisplayBookshelve';
 interface props {
   id: string,
   title: string,
@@ -14,10 +15,14 @@ interface props {
 
 
 
-const books: any = [{
+const books: bookproperties[] = [{
   "id": "343625f0-0702-4f68-a482-9a79d6a05366",
   "title": "Fist of the North Star",
-  "subtitle": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat.Nulla nisl.Nunc nisl.", "author": { "first_name": "Geri", "last_name": "Solleme", "email": "gsolleme0@cafepress.com" }, "publisher": "Geri Solleme", "publisherDate": "6 / 5 / 1959", "category": "Horror", "isbn": "0338475589", "pagecount": 75, "isEbook": false, "description": "Duis aliquam convallis nunc.Proin at turpis a pede posuere nonummy.Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.Integer ac neque.\n\nDuis bibendum.Morbi non quam nec dui luctus rutrum.Nulla tellus.\n\nIn sagittis dui vel nisl.Duis ac nibh.Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti.In eleifend quam a odio.In hac habitasse platea dictumst.", "cover": { "image": "https://random.imagecdn.app/500/150" }
+  "category": "Horror",
+  "subtitle": "Horror theme",
+  "cover": {
+    "image": "pic.jpg"
+  }
 }
 ]
 
@@ -84,7 +89,7 @@ let searchbook = {
 
 it('Should be able to type input element', async () => {
   render(
-    <Searchbook books={searchlist} searchbookresult={searchbook} />);
+    <SearchBook books={searchlist} searchbookresult={searchbook} />);
 
   const inputElement = screen.getByPlaceholderText(/Search books/i);
   fireEvent.change(inputElement, { target: { value: "Cure, The" } });
